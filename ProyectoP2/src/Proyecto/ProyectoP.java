@@ -5,6 +5,8 @@
  */
 package Proyecto;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author sergiourzua
@@ -46,6 +48,11 @@ public class ProyectoP extends javax.swing.JFrame {
         });
 
         jButtonCliente.setText("Cliente");
+        jButtonCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonClienteActionPerformed(evt);
+            }
+        });
 
         jLabelFondo.setText("jLabel1");
 
@@ -86,8 +93,12 @@ public class ProyectoP extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVendedorActionPerformed
-        // TODO add your handling code here:
+        new ProyectoVendedor().setVisible(true);
     }//GEN-LAST:event_jButtonVendedorActionPerformed
+
+    private void jButtonClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonClienteActionPerformed
 
     /**
      * @param args the command line arguments
