@@ -49,7 +49,7 @@ public class ConexionDB {
             this.desconectar();
         }
     }
-    
+    //login
     public String login(String DB, String usr, String psswrd, String tabla, String id) {
         String contrasena = null;
         try {

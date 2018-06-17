@@ -132,7 +132,7 @@ public class ProyectoVendedor extends javax.swing.JFrame {
     private void IDTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_IDTextFieldActionPerformed
-
+    //login
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
         String id = IDTextField.getText();
         char[] con = jPasswordField1.getPassword();
