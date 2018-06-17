@@ -99,7 +99,9 @@ public class ProyectoP extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonVendedorActionPerformed
 
     private void jButtonClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClienteActionPerformed
-        //new MenuCliente().setVisible(true);
+        MenuCliente c = new MenuCliente();
+        c.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButtonClienteActionPerformed
 
     /**
