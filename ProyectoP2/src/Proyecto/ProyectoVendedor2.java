@@ -103,7 +103,8 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    //cerrar
     private void jButtonCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCerrarSesionActionPerformed
         ProyectoP p = new ProyectoP();
         p.setVisible(true);
