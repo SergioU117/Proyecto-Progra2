@@ -5,7 +5,6 @@
  */
 package Proyecto;
 
-import javax.swing.JFrame;
 
 /**
  *

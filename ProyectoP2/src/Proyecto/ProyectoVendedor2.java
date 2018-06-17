@@ -33,6 +33,7 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
         jButtonVender = new javax.swing.JButton();
         jButtonConsultar = new javax.swing.JButton();
         jButtonCerrarSesion = new javax.swing.JButton();
+        jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,14 +53,18 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
             }
         });
 
+        jLabelFondo.setText("jLabel1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
+                        .addComponent(jLabelFondo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButtonAlta)
@@ -68,16 +73,16 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButtonConsultar))
                             .addComponent(jLabelTitulo)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButtonCerrarSesion)))
-                .addContainerGap(52, Short.MAX_VALUE))
+                    .addComponent(jButtonCerrarSesion))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabelTitulo)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelTitulo)
+                    .addComponent(jLabelFondo))
                 .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonAlta)
@@ -126,6 +131,7 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new ProyectoVendedor2().setVisible(true);
             }
@@ -137,6 +143,7 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
     private javax.swing.JButton jButtonCerrarSesion;
     private javax.swing.JButton jButtonConsultar;
     private javax.swing.JButton jButtonVender;
+    private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelTitulo;
     // End of variables declaration//GEN-END:variables
 }
