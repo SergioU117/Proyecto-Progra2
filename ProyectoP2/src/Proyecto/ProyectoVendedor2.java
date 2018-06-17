@@ -9,14 +9,13 @@ package Proyecto;
  *
  * @author sergiourzua
  */
-public class ProyectoP extends javax.swing.JFrame {
+public class ProyectoVendedor2 extends javax.swing.JFrame {
 
     /**
-     * Creates new form ProyectoP
+     * Creates new form ProyectoVendedor2
      */
-    public ProyectoP() {
+    public ProyectoVendedor2() {
         initComponents();
-        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -29,23 +28,22 @@ public class ProyectoP extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabelTitulo = new javax.swing.JLabel();
-        jButtonVendedor = new javax.swing.JButton();
-        jButtonCliente = new javax.swing.JButton();
+        jLabelDatosVendedor = new javax.swing.JLabel();
+        jButtonAlta = new javax.swing.JButton();
+        jButtonConsulta = new javax.swing.JButton();
+        jButtonVender = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabelTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabelTitulo.setText("Tienda de Automoviles S.A de C.V");
+        jLabelTitulo.setText("Menu de Vendedor");
 
-        jButtonVendedor.setText("Vendedor");
-        jButtonVendedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonVendedorActionPerformed(evt);
-            }
-        });
+        jButtonAlta.setText("Alta");
 
-        jButtonCliente.setText("Cliente");
+        jButtonConsulta.setText("Consulta");
+
+        jButtonVender.setText("Vender");
 
         jLabelFondo.setText("jLabel1");
 
@@ -54,40 +52,42 @@ public class ProyectoP extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
-                .addComponent(jLabelTitulo)
-                .addGap(35, 35, 35))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addComponent(jButtonVendedor)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonCliente)
-                .addGap(86, 86, 86))
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jLabelDatosVendedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonAlta)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonVender)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonConsulta)
+                .addGap(61, 61, 61))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jLabelFondo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addComponent(jLabelTitulo)
+                .addGap(63, 63, 63))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabelFondo)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelTitulo)
+                    .addComponent(jLabelFondo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(44, 44, 44)
+                .addComponent(jLabelDatosVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(192, 192, 192))
+                    .addComponent(jButtonAlta)
+                    .addComponent(jButtonConsulta)
+                    .addComponent(jButtonVender))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButtonVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVendedorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonVendedorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -106,28 +106,29 @@ public class ProyectoP extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ProyectoP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProyectoVendedor2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ProyectoP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProyectoVendedor2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ProyectoP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProyectoVendedor2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ProyectoP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProyectoVendedor2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
             public void run() {
-                new ProyectoP().setVisible(true);
+                new ProyectoVendedor2().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonCliente;
-    private javax.swing.JButton jButtonVendedor;
+    private javax.swing.JButton jButtonAlta;
+    private javax.swing.JButton jButtonConsulta;
+    private javax.swing.JButton jButtonVender;
+    private javax.swing.JLabel jLabelDatosVendedor;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelTitulo;
     // End of variables declaration//GEN-END:variables
