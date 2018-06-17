@@ -38,8 +38,7 @@
               <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
-              <Component id="jLabelFondo" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="21" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="55" max="32767" attributes="0"/>
               <Component id="jLabelTitulo" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
           </Group>
@@ -49,10 +48,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabelTitulo" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabelFondo" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="jLabelTitulo" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabelDatosVendedor" min="-2" pref="36" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -90,11 +86,6 @@
     <Component class="javax.swing.JButton" name="jButtonVender">
       <Properties>
         <Property name="text" type="java.lang.String" value="Vender"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabelFondo">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
     </Component>
   </SubComponents>

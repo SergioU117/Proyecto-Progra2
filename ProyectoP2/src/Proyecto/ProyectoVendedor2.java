@@ -32,7 +32,6 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
         jButtonAlta = new javax.swing.JButton();
         jButtonConsulta = new javax.swing.JButton();
         jButtonVender = new javax.swing.JButton();
-        jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,8 +43,6 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
         jButtonConsulta.setText("Consulta");
 
         jButtonVender.setText("Vender");
-
-        jLabelFondo.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -64,8 +61,7 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
                 .addComponent(jButtonConsulta)
                 .addGap(61, 61, 61))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jLabelFondo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addGap(0, 55, Short.MAX_VALUE)
                 .addComponent(jLabelTitulo)
                 .addGap(63, 63, 63))
         );
@@ -73,9 +69,7 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelTitulo)
-                    .addComponent(jLabelFondo))
+                .addComponent(jLabelTitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelDatosVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -129,7 +123,6 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
     private javax.swing.JButton jButtonConsulta;
     private javax.swing.JButton jButtonVender;
     private javax.swing.JLabel jLabelDatosVendedor;
-    private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelTitulo;
     // End of variables declaration//GEN-END:variables
 }

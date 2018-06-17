@@ -94,6 +94,7 @@ public class ProyectoP extends javax.swing.JFrame {
 
     private void jButtonVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVendedorActionPerformed
         new ProyectoVendedor().setVisible(true);
+        
     }//GEN-LAST:event_jButtonVendedorActionPerformed
 
     private void jButtonClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClienteActionPerformed
