@@ -1,6 +1,10 @@
 package Proyecto;
 
 import java.sql.*;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.ERROR_MESSAGE;
+import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
+import static javax.swing.JOptionPane.WARNING_MESSAGE;
 
 public class ConexionDB {
     private Connection conexion;
@@ -23,7 +27,7 @@ public class ConexionDB {
             url += DB;
             conexion = DriverManager.getConnection(url,usr,psswrd);
         } catch (ClassNotFoundException | SQLException e) {
-            System.err.println("Error en la conexion");
+            JOptionPane.showMessageDialog(null, "Error en la conexion", "Error", ERROR_MESSAGE);
             conexion = null;
         }
         return conexion;
@@ -40,12 +44,29 @@ public class ConexionDB {
                 System.out.println("Nombre = " + datos.getString("Nombre") + "\n" + "RFC = " + datos.getString("RFC"));
             }    
         } catch (SQLException e) {
-            System.err.println("No se pudo hacer la consulta");
+            JOptionPane.showMessageDialog(null, "No se pudo hacer la consulta", "Error", ERROR_MESSAGE);
         } finally {
             this.desconectar();
         }
     }
     
+    public String login(String DB, String usr, String psswrd, String tabla, String id) {
+        String contrasena = null;
+        try {
+            conexion = (Connection) this.getConnection(DB, usr, psswrd);
+            String sql = "SELECT Constraseña FROM "+DB+"."+tabla+" WHERE ClaveVendedor = "+id;
+            consulta = conexion.prepareStatement(sql);
+            datos = consulta.executeQuery();
+            while (datos.next()) {
+                contrasena = datos.getString("Constraseña");
+            }    
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error en al iniciar sesion", "Error", ERROR_MESSAGE);
+        } finally {
+            this.desconectar();
+        }
+        return contrasena;
+    }
     
     //Modificar para insertar
     public void insertar(String DB, String usr, String psswrd, String tabla, String col) {
@@ -56,13 +77,13 @@ public class ConexionDB {
             datosi = inserta.executeUpdate();
             
             if (datosi == 1) {
-                System.out.println("Valores correctamente insertados");
+                JOptionPane.showMessageDialog(null, "Valores correctamente insertados", "Informacion", INFORMATION_MESSAGE);
             } else {
-                System.out.println("No se pudo insertar");
+                JOptionPane.showMessageDialog(null, "Valores correctamente insertados", "Informacion", WARNING_MESSAGE);
             }
    
         } catch (SQLException e) {
-            System.err.println("No se pude insertar");
+            JOptionPane.showMessageDialog(null, "No se puede insertar", "Error", ERROR_MESSAGE);
         } finally {
             this.desconectar();
         }
@@ -74,7 +95,7 @@ public class ConexionDB {
            if(consulta != null) consulta.close();
            if(datos != null) datos.close();
         } catch (SQLException e) {
-            System.err.println("No se pudo desconectar");
+            JOptionPane.showMessageDialog(null, "No se pudo desconectar", "Error", ERROR_MESSAGE);
         }
     }
 }

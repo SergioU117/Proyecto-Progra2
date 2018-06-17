@@ -93,7 +93,9 @@ public class ProyectoP extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVendedorActionPerformed
-        new ProyectoVendedor().setVisible(true);
+        ProyectoVendedor v = new ProyectoVendedor();
+        v.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButtonVendedorActionPerformed
 
     private void jButtonClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClienteActionPerformed
