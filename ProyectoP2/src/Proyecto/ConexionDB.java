@@ -54,11 +54,11 @@ public class ConexionDB {
         String contrasena = null;
         try {
             conexion = (Connection) this.getConnection(DB, usr, psswrd);
-            String sql = "SELECT Constraseña FROM "+DB+"."+tabla+" WHERE ClaveVendedor = "+id;
+            String sql = "SELECT Contraseña FROM "+DB+"."+tabla+" WHERE ClaveVendedor = "+id;
             consulta = conexion.prepareStatement(sql);
             datos = consulta.executeQuery();
             while (datos.next()) {
-                contrasena = datos.getString("Constraseña");
+                contrasena = datos.getString("Contraseña");
             }    
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error en al iniciar sesion", "Error", ERROR_MESSAGE);
@@ -66,6 +66,7 @@ public class ConexionDB {
             this.desconectar();
         }
         return contrasena;
+        
     }
     
     //Modificar para insertar

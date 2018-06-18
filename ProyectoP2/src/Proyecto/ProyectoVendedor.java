@@ -6,6 +6,7 @@
 package Proyecto;
 
 import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.WARNING_MESSAGE;
 
 /**
  *
@@ -134,7 +135,7 @@ public class ProyectoVendedor extends javax.swing.JFrame {
             v2.setVisible(true);
             this.setVisible(false);
         } else {
-            JOptionPane.showMessageDialog(this, "Usuario o contrasena incorrecta");
+            JOptionPane.showMessageDialog(this, "Usuario o contrasena incorrecta","Informacion", WARNING_MESSAGE);
         }
     }//GEN-LAST:event_jButtonEntrarActionPerformed
 
