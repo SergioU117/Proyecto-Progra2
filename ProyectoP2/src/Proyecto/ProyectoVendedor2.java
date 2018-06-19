@@ -23,7 +23,7 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
         ProyectoVendedor v = new ProyectoVendedor();
         ConexionDB c = new ConexionDB();
         System.out.println(v.id);
-        String sql = "SELECT ClaveVendedor,Nombre,ApPaterno,ApMaterno,RFC FROM Proyecto.Vendedores WHERE ClaveVendedor = "
+        String sql = "SELECT Clave,Nombre,ApPaterno,ApMaterno,RFC FROM Proyecto.Vendedores WHERE Clave = "
                       +v.id;
         c.consultar("Proyecto", "root", "", sql);
         String id = "";
@@ -31,7 +31,7 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
         String RFC = "";
         try {
             while (c.datos.next()){
-               id = String.valueOf(c.datos.getInt("ClaveVendedor"));
+               id = String.valueOf(c.datos.getInt("Clave"));
                Nombre = c.datos.getString("Nombre")+" "+c.datos.getString("ApPaterno")+" "+c.datos.getString("ApMaterno");
                RFC = c.datos.getString("RFC");
             }

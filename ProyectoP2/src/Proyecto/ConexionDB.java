@@ -66,7 +66,7 @@ public class ConexionDB {
         String contrasena = null;
         try {
             conexion = (Connection) this.getConnection(DB, usr, psswrd);
-            String sql = "SELECT Contraseña FROM "+DB+"."+tabla+" WHERE ClaveVendedor = "+id;
+            String sql = "SELECT Contraseña FROM "+DB+"."+tabla+" WHERE Clave = "+id;
             consulta = conexion.prepareStatement(sql);
             datos = consulta.executeQuery();
             while (datos.next()) {
