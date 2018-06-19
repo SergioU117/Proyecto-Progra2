@@ -30,13 +30,11 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabelFondo" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="jButtonConsultar" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jButtonVender" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jButtonActualizar" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jLabelTitulo" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -47,7 +45,7 @@
                       <Component id="jLabelID" alignment="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="21" max="32767" attributes="0"/>
+              <EmptySpace pref="44" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -69,7 +67,6 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButtonConsultar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButtonVender" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButtonActualizar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="93" max="32767" attributes="0"/>
               <Component id="jButtonCerrarSesion" min="-2" max="-2" attributes="0"/>
@@ -98,11 +95,6 @@
     <Component class="javax.swing.JButton" name="jButtonVender">
       <Properties>
         <Property name="text" type="java.lang.String" value="Vender"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jButtonActualizar">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Actualizar"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonCerrarSesion">

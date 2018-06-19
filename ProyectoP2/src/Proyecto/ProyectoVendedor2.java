@@ -22,8 +22,7 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
         this.setResizable(false);
         ProyectoVendedor v = new ProyectoVendedor();
         ConexionDB c = new ConexionDB();
-        String sql = "SELECT Clave,Nombre,ApPaterno,ApMaterno,RFC FROM Proyecto.Vendedores WHERE Clave = "
-                      +v.id;
+        String sql = "SELECT Clave,Nombre,ApPaterno,ApMaterno,RFC FROM Proyecto.Vendedores WHERE Clave = "+v.id;
         c.consultar("Proyecto", "root", "", sql);
         String id = "";
         String Nombre = "";
@@ -58,7 +57,6 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
         jLabelTitulo = new javax.swing.JLabel();
         jButtonConsultar = new javax.swing.JButton();
         jButtonVender = new javax.swing.JButton();
-        jButtonActualizar = new javax.swing.JButton();
         jButtonCerrarSesion = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
         jLabelID = new javax.swing.JLabel();
@@ -78,8 +76,6 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
         });
 
         jButtonVender.setText("Vender");
-
-        jButtonActualizar.setText("Actualizar");
 
         jButtonCerrarSesion.setText("Cerrar Sesion");
         jButtonCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
@@ -107,19 +103,17 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabelFondo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButtonConsultar)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButtonVender)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButtonActualizar))
+                                .addComponent(jButtonVender))
                             .addComponent(jLabelTitulo)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jLabelRFC, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
                         .addComponent(jLabelNombre, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabelID, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,8 +131,7 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonConsultar)
-                    .addComponent(jButtonVender)
-                    .addComponent(jButtonActualizar))
+                    .addComponent(jButtonVender))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
                 .addComponent(jButtonCerrarSesion)
                 .addContainerGap())
@@ -196,7 +189,6 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonActualizar;
     private javax.swing.JButton jButtonCerrarSesion;
     private javax.swing.JButton jButtonConsultar;
     private javax.swing.JButton jButtonVender;
