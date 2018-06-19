@@ -32,6 +32,7 @@ public class MenuCliente extends javax.swing.JFrame {
         ButtonAlta = new javax.swing.JButton();
         ButtonConsultar = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
+        ButtonRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,6 +56,13 @@ public class MenuCliente extends javax.swing.JFrame {
 
         jLabelFondo.setText("jLabel1");
 
+        ButtonRegresar.setText("Regresar");
+        ButtonRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonRegresarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -71,7 +79,10 @@ public class MenuCliente extends javax.swing.JFrame {
                             .addComponent(MenuCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabelFondo)))
+                        .addComponent(jLabelFondo))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(152, 152, 152)
+                        .addComponent(ButtonRegresar)))
                 .addContainerGap(65, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -85,7 +96,9 @@ public class MenuCliente extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ButtonAlta)
                     .addComponent(ButtonConsultar))
-                .addContainerGap(135, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addComponent(ButtonRegresar)
+                .addGap(70, 70, 70))
         );
 
         pack();
@@ -96,8 +109,16 @@ public class MenuCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonAltaActionPerformed
 
     private void ButtonConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonConsultarActionPerformed
-        // TODO add your handling code here:
+        ConsultarCliente c= new ConsultarCliente();
+        c.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_ButtonConsultarActionPerformed
+
+    private void ButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRegresarActionPerformed
+        ProyectoP p = new ProyectoP();
+        p.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_ButtonRegresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,6 +158,7 @@ public class MenuCliente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonAlta;
     private javax.swing.JButton ButtonConsultar;
+    private javax.swing.JButton ButtonRegresar;
     private javax.swing.JLabel MenuCliente;
     private javax.swing.JLabel jLabelFondo;
     // End of variables declaration//GEN-END:variables
