@@ -19,7 +19,9 @@ public class ConsultarCliente extends javax.swing.JFrame {
     public ConsultarCliente() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setResizable(false);
     }
+    public static String id;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -133,7 +135,7 @@ public class ConsultarCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonRegresarActionPerformed
 
     private void ButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEntrarActionPerformed
-        String id = TFID.getText();
+        id = TFID.getText();
         char[] contra = PassFieldCliente.getPassword();
         ConexionDB d = new ConexionDB();
         if (d.login("Proyecto", "root", "", "Clientes", id).equals(String.valueOf(contra))) {

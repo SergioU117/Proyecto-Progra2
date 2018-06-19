@@ -5,6 +5,8 @@
  */
 package Proyecto;
 
+import java.sql.SQLException;
+
 /**
  *
  * @author magar
@@ -17,6 +19,29 @@ public class MenuCliente extends javax.swing.JFrame {
     public MenuCliente() {
         initComponents();
         this.setLocationRelativeTo(null);
+        ConsultarCliente co = new ConsultarCliente();
+        ConexionDB c = new ConexionDB();
+        String sql = "SELECT Clave,Nombre,ApPaterno,ApMaterno,RFC FROM Proyecto.Clientes WHERE Clave = "
+                      +co.id;
+        c.consultar("Proyecto", "root", "", sql);
+        String id = "";
+        String Nombre = "";
+        String RFC = "";
+        try {
+            while (c.datos.next()){
+               id = String.valueOf(c.datos.getInt("Clave"));
+               Nombre = c.datos.getString("Nombre")+" "+c.datos.getString("ApPaterno")+" "+c.datos.getString("ApMaterno");
+               RFC = c.datos.getString("RFC");
+            }
+            
+        } catch (SQLException e) {
+            id = Nombre = RFC = "Error al consultar datos";
+        } finally {
+            c.desconectar();
+        }
+        jLabelID.setText("ID: "+id);
+        jLabelNombre.setText("Nombre: "+Nombre); 
+        jLabelRFC.setText("RFC: "+RFC);
     }
 
     /**
@@ -33,6 +58,9 @@ public class MenuCliente extends javax.swing.JFrame {
         ButtonConsultar = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
         ButtonRegresar = new javax.swing.JButton();
+        jLabelID = new javax.swing.JLabel();
+        jLabelNombre = new javax.swing.JLabel();
+        jLabelRFC = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,42 +91,70 @@ public class MenuCliente extends javax.swing.JFrame {
             }
         });
 
+        jLabelID.setText("jLabel1");
+
+        jLabelNombre.setText("jLabel1");
+
+        jLabelRFC.setText("jLabel1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(51, 51, 51)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(ButtonAlta, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(ButtonConsultar))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(108, 108, 108)
+                                        .addComponent(ButtonRegresar)
+                                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabelFondo)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(MenuCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabelID, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 46, Short.MAX_VALUE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(ButtonAlta, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(ButtonConsultar))
-                            .addComponent(MenuCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabelFondo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(152, 152, 152)
-                        .addComponent(ButtonRegresar)))
-                .addContainerGap(65, Short.MAX_VALUE))
+                            .addComponent(jLabelNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+                            .addComponent(jLabelRFC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelFondo)
-                .addGap(17, 17, 17)
-                .addComponent(MenuCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabelFondo))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(MenuCliente)))
+                .addGap(16, 16, 16)
+                .addComponent(jLabelID)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelNombre)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelRFC)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ButtonAlta)
                     .addComponent(ButtonConsultar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addComponent(ButtonRegresar)
-                .addGap(70, 70, 70))
+                .addGap(53, 53, 53))
         );
 
         pack();
@@ -162,5 +218,8 @@ public class MenuCliente extends javax.swing.JFrame {
     private javax.swing.JButton ButtonRegresar;
     private javax.swing.JLabel MenuCliente;
     private javax.swing.JLabel jLabelFondo;
+    private javax.swing.JLabel jLabelID;
+    private javax.swing.JLabel jLabelNombre;
+    private javax.swing.JLabel jLabelRFC;
     // End of variables declaration//GEN-END:variables
 }
