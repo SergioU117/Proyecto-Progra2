@@ -32,11 +32,11 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jButtonAlta" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButtonConsultar" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jButtonVender" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jButtonConsultar" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButtonActualizar" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jLabelTitulo" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -47,7 +47,7 @@
                       <Component id="jLabelID" alignment="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="44" max="32767" attributes="0"/>
+              <EmptySpace pref="21" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -67,9 +67,9 @@
               <Component id="jLabelRFC" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButtonAlta" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButtonVender" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButtonConsultar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonVender" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonActualizar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="93" max="32767" attributes="0"/>
               <Component id="jButtonCerrarSesion" min="-2" max="-2" attributes="0"/>
@@ -87,12 +87,12 @@
         <Property name="text" type="java.lang.String" value="Menu de Vendedor"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButtonAlta">
+    <Component class="javax.swing.JButton" name="jButtonConsultar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Alta"/>
+        <Property name="text" type="java.lang.String" value="Consultar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAltaActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonConsultarActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonVender">
@@ -100,9 +100,9 @@
         <Property name="text" type="java.lang.String" value="Vender"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButtonConsultar">
+    <Component class="javax.swing.JButton" name="jButtonActualizar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Consultar"/>
+        <Property name="text" type="java.lang.String" value="Actualizar"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonCerrarSesion">

@@ -56,9 +56,9 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabelTitulo = new javax.swing.JLabel();
-        jButtonAlta = new javax.swing.JButton();
-        jButtonVender = new javax.swing.JButton();
         jButtonConsultar = new javax.swing.JButton();
+        jButtonVender = new javax.swing.JButton();
+        jButtonActualizar = new javax.swing.JButton();
         jButtonCerrarSesion = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
         jLabelID = new javax.swing.JLabel();
@@ -70,16 +70,16 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
         jLabelTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabelTitulo.setText("Menu de Vendedor");
 
-        jButtonAlta.setText("Alta");
-        jButtonAlta.addActionListener(new java.awt.event.ActionListener() {
+        jButtonConsultar.setText("Consultar");
+        jButtonConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAltaActionPerformed(evt);
+                jButtonConsultarActionPerformed(evt);
             }
         });
 
         jButtonVender.setText("Vender");
 
-        jButtonConsultar.setText("Consultar");
+        jButtonActualizar.setText("Actualizar");
 
         jButtonCerrarSesion.setText("Cerrar Sesion");
         jButtonCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
@@ -109,17 +109,17 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButtonAlta)
+                                .addComponent(jButtonConsultar)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButtonVender)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButtonConsultar))
+                                .addComponent(jButtonActualizar))
                             .addComponent(jLabelTitulo)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jLabelRFC, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
                         .addComponent(jLabelNombre, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabelID, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,9 +136,9 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
                 .addComponent(jLabelRFC)
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonAlta)
+                    .addComponent(jButtonConsultar)
                     .addComponent(jButtonVender)
-                    .addComponent(jButtonConsultar))
+                    .addComponent(jButtonActualizar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
                 .addComponent(jButtonCerrarSesion)
                 .addContainerGap())
@@ -153,11 +153,11 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButtonCerrarSesionActionPerformed
 
-    private void jButtonAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAltaActionPerformed
+    private void jButtonConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultarActionPerformed
         ProyectoVendedor3 p = new ProyectoVendedor3();
         p.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButtonAltaActionPerformed
+    }//GEN-LAST:event_jButtonConsultarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -196,7 +196,7 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonAlta;
+    private javax.swing.JButton jButtonActualizar;
     private javax.swing.JButton jButtonCerrarSesion;
     private javax.swing.JButton jButtonConsultar;
     private javax.swing.JButton jButtonVender;
