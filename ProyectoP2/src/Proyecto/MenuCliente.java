@@ -54,33 +54,18 @@ public class MenuCliente extends javax.swing.JFrame {
     private void initComponents() {
 
         MenuCliente = new javax.swing.JLabel();
-        ButtonAlta = new javax.swing.JButton();
-        ButtonConsultar = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
         ButtonRegresar = new javax.swing.JButton();
         jLabelID = new javax.swing.JLabel();
         jLabelNombre = new javax.swing.JLabel();
         jLabelRFC = new javax.swing.JLabel();
+        ButtonCatalogo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         MenuCliente.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         MenuCliente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         MenuCliente.setText("Menu de Cliente");
-
-        ButtonAlta.setText("Alta");
-        ButtonAlta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonAltaActionPerformed(evt);
-            }
-        });
-
-        ButtonConsultar.setText("Consultar");
-        ButtonConsultar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonConsultarActionPerformed(evt);
-            }
-        });
 
         jLabelFondo.setText("jLabel1");
 
@@ -97,6 +82,13 @@ public class MenuCliente extends javax.swing.JFrame {
 
         jLabelRFC.setText("jLabel1");
 
+        ButtonCatalogo.setText("Catálogo");
+        ButtonCatalogo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonCatalogoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -105,32 +97,24 @@ public class MenuCliente extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(51, 51, 51)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(ButtonAlta, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(ButtonConsultar))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(108, 108, 108)
-                                        .addComponent(ButtonRegresar)
-                                        .addGap(0, 0, Short.MAX_VALUE))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabelFondo)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(MenuCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabelID, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 46, Short.MAX_VALUE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabelNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
                             .addComponent(jLabelRFC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabelFondo)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(MenuCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabelID, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(55, 55, 55)
+                                .addComponent(ButtonCatalogo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ButtonRegresar)))
+                        .addContainerGap(56, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,33 +132,27 @@ public class MenuCliente extends javax.swing.JFrame {
                 .addComponent(jLabelNombre)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelRFC)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ButtonAlta)
-                    .addComponent(ButtonConsultar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                .addComponent(ButtonRegresar)
-                .addGap(53, 53, 53))
+                    .addComponent(ButtonRegresar)
+                    .addComponent(ButtonCatalogo))
+                .addGap(93, 93, 93))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void ButtonAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAltaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonAltaActionPerformed
-
-    private void ButtonConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonConsultarActionPerformed
-        ConsultarCliente c= new ConsultarCliente();
-        c.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_ButtonConsultarActionPerformed
 
     private void ButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRegresarActionPerformed
         ProyectoP p = new ProyectoP();
         p.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_ButtonRegresarActionPerformed
+
+    private void ButtonCatalogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCatalogoActionPerformed
+        Catalogo cat= new Catalogo();
+        cat.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_ButtonCatalogoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -213,8 +191,7 @@ public class MenuCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ButtonAlta;
-    private javax.swing.JButton ButtonConsultar;
+    private javax.swing.JButton ButtonCatalogo;
     private javax.swing.JButton ButtonRegresar;
     private javax.swing.JLabel MenuCliente;
     private javax.swing.JLabel jLabelFondo;
