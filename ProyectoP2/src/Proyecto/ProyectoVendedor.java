@@ -20,8 +20,9 @@ public class ProyectoVendedor extends javax.swing.JFrame {
     public ProyectoVendedor() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setResizable(false);
     }
-
+    public static String id;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -127,7 +128,7 @@ public class ProyectoVendedor extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldIDActionPerformed
 
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
-        String id = jTextFieldID.getText();
+        id = jTextFieldID.getText();
         char[] con = jPasswordFieldContrasena.getPassword();
         ConexionDB d = new ConexionDB();
         if (d.login("Proyecto", "root", "", "Vendedores", id).equals(String.valueOf(con))) {

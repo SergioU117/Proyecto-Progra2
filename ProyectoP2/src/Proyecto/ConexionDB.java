@@ -49,7 +49,19 @@ public class ConexionDB {
             this.desconectar();
         }
     }
-    //login
+    
+        public void consultar(String DB, String usr, String psswrd, String sql) {
+        try {
+            conexion = (Connection) this.getConnection(DB, usr, psswrd);
+            consulta = conexion.prepareStatement(sql);
+            datos = consulta.executeQuery();
+            
+               
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "No se pudo hacer la consulta", "Error", ERROR_MESSAGE);
+        }
+    }
+
     public String login(String DB, String usr, String psswrd, String tabla, String id) {
         String contrasena = null;
         try {

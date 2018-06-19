@@ -5,6 +5,8 @@
  */
 package Proyecto;
 
+import java.sql.SQLException;
+
 /**
  *
  * @author sergiourzua
@@ -17,6 +19,32 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
     public ProyectoVendedor2() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setResizable(false);
+        ProyectoVendedor v = new ProyectoVendedor();
+        ConexionDB c = new ConexionDB();
+        System.out.println(v.id);
+        String sql = "SELECT ClaveVendedor,Nombre,ApPaterno,ApMaterno,RFC FROM Proyecto.Vendedores WHERE ClaveVendedor = "
+                      +v.id;
+        c.consultar("Proyecto", "root", "", sql);
+        String id = "";
+        String Nombre = "";
+        String RFC = "";
+        try {
+            while (c.datos.next()){
+               id = String.valueOf(c.datos.getInt("ClaveVendedor"));
+               Nombre = c.datos.getString("Nombre")+" "+c.datos.getString("ApPaterno")+" "+c.datos.getString("ApMaterno");
+               RFC = c.datos.getString("RFC");
+            }
+            
+        } catch (SQLException e) {
+            id = Nombre = RFC = "Error al consultar datos";
+        } finally {
+            c.desconectar();
+        }
+        jLabelID.setText("ID: "+id);
+        jLabelNombre.setText("Nombre: "+Nombre); 
+        jLabelRFC.setText("RFC: "+RFC); 
+        
     }
 
     /**
@@ -34,6 +62,9 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
         jButtonConsultar = new javax.swing.JButton();
         jButtonCerrarSesion = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
+        jLabelID = new javax.swing.JLabel();
+        jLabelNombre = new javax.swing.JLabel();
+        jLabelRFC = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,6 +72,11 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
         jLabelTitulo.setText("Menu de Vendedor");
 
         jButtonAlta.setText("Alta");
+        jButtonAlta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAltaActionPerformed(evt);
+            }
+        });
 
         jButtonVender.setText("Vender");
 
@@ -55,6 +91,12 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
 
         jLabelFondo.setText("jLabel1");
 
+        jLabelID.setText("jLabel1");
+
+        jLabelNombre.setText("jLabel2");
+
+        jLabelRFC.setText("jLabel3");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -62,6 +104,7 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonCerrarSesion)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabelFondo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -73,7 +116,10 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButtonConsultar))
                             .addComponent(jLabelTitulo)))
-                    .addComponent(jButtonCerrarSesion))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jLabelRFC, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                        .addComponent(jLabelNombre, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabelID, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -83,12 +129,18 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelTitulo)
                     .addComponent(jLabelFondo))
-                .addGap(46, 46, 46)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelID)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelNombre)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelRFC)
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonAlta)
                     .addComponent(jButtonVender)
                     .addComponent(jButtonConsultar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
                 .addComponent(jButtonCerrarSesion)
                 .addContainerGap())
         );
@@ -101,6 +153,12 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
         p.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonCerrarSesionActionPerformed
+
+    private void jButtonAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAltaActionPerformed
+        ProyectoVendedor3 p = new ProyectoVendedor3();
+        p.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonAltaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,6 +202,9 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
     private javax.swing.JButton jButtonConsultar;
     private javax.swing.JButton jButtonVender;
     private javax.swing.JLabel jLabelFondo;
+    private javax.swing.JLabel jLabelID;
+    private javax.swing.JLabel jLabelNombre;
+    private javax.swing.JLabel jLabelRFC;
     private javax.swing.JLabel jLabelTitulo;
     // End of variables declaration//GEN-END:variables
 }

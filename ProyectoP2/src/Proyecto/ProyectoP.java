@@ -18,6 +18,7 @@ public class ProyectoP extends javax.swing.JFrame {
     public ProyectoP() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setResizable(false);
     }
 
     /**
