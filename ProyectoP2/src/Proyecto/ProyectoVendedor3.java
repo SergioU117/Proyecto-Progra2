@@ -5,6 +5,10 @@
  */
 package Proyecto;
 
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.ERROR_MESSAGE;
+
 /**
  *
  * @author sergiourzua
@@ -29,76 +33,136 @@ public class ProyectoVendedor3 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jLabel2CV = new javax.swing.JLabel();
-        jTextFieldCV = new javax.swing.JTextField();
+        jLabelTitulo = new javax.swing.JLabel();
+        jButtonRegresar = new javax.swing.JButton();
+        jLabelClave = new javax.swing.JLabel();
+        jTextFieldClave = new javax.swing.JTextField();
         jButtonConsultar = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTableMostrar = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel1.setText("Consultar");
+        jLabelTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabelTitulo.setText("Consultar");
 
-        jButton3.setText("Regresar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButtonRegresar.setText("Regresar");
+        jButtonRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButtonRegresarActionPerformed(evt);
             }
         });
 
-        jLabel2CV.setText("Clave del Producto:");
+        jLabelClave.setText("Clave del Producto:");
 
         jButtonConsultar.setText("Consultar");
+        jButtonConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConsultarActionPerformed(evt);
+            }
+        });
+
+        jTableMostrar.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID Producto", "Modelo", "Serie", "Descripcion", "Precio Costo", "Precio Venta", "En existencia"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Float.class, java.lang.Float.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jTableMostrar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2)
+                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jButton3)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
+                .addGap(200, 200, 200)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addComponent(jLabel2CV)
-                        .addGap(50, 50, 50)
-                        .addComponent(jTextFieldCV, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(61, 61, 61)
+                        .addComponent(jLabelTitulo))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(125, 125, 125)
-                        .addComponent(jLabel1)))
-                .addGap(64, 64, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButtonConsultar)
-                .addGap(146, 146, 146))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelClave)
+                            .addComponent(jButtonRegresar))
+                        .addGap(50, 50, 50)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButtonConsultar)
+                            .addComponent(jTextFieldClave, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(202, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2CV)
-                    .addComponent(jTextFieldCV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabelTitulo)
                 .addGap(18, 18, 18)
-                .addComponent(jButtonConsultar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addGap(36, 36, 36))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelClave)
+                    .addComponent(jTextFieldClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonConsultar)
+                    .addComponent(jButtonRegresar))
+                .addGap(24, 24, 24)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
         ProyectoVendedor2 p = new ProyectoVendedor2();
         p.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jButtonRegresarActionPerformed
+
+    private void jButtonConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultarActionPerformed
+        String id;
+        int i = 0;
+        id = jTextFieldClave.getText();
+        ConexionDB c = new ConexionDB();
+        String sql = "SELECT * FROM Proyecto.Inventario WHERE Clave ="+id;
+        c.consultar("Proyecto", "root", "", sql);
+        try {
+            while (c.datos.next()){
+                jTableMostrar.setValueAt(c.datos.getInt("Clave"), i, 0);
+                jTableMostrar.setValueAt(c.datos.getString("Modelo"), i, 1);
+                jTableMostrar.setValueAt(c.datos.getInt("Serie"), i, 2);
+                jTableMostrar.setValueAt(c.datos.getString("Descripcion"), i, 3);
+                jTableMostrar.setValueAt(c.datos.getFloat("PrecioCosto"), i, 4);
+                jTableMostrar.setValueAt(c.datos.getFloat("PrecioVenta"), i, 5);
+                jTableMostrar.setValueAt(c.datos.getString("Existencia"), i, 6);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "No se pudo hacer la consulta", "Error", ERROR_MESSAGE);
+        } finally {
+            c.desconectar();
+        }
+        i++;
+        
+    }//GEN-LAST:event_jButtonConsultarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,10 +201,12 @@ public class ProyectoVendedor3 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButtonConsultar;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2CV;
-    private javax.swing.JTextField jTextFieldCV;
+    private javax.swing.JButton jButtonRegresar;
+    private javax.swing.JLabel jLabelClave;
+    private javax.swing.JLabel jLabelTitulo;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTableMostrar;
+    private javax.swing.JTextField jTextFieldClave;
     // End of variables declaration//GEN-END:variables
 }
