@@ -28,26 +28,28 @@
               <Component id="jScrollPane2" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jLabelTitulo" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="266" max="-2" attributes="0"/>
+          </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="200" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                      <Component id="jLabelTitulo" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabelClave" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButtonRegresar" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jLabelClave" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jButtonConsultar" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextFieldClave" min="-2" pref="91" max="-2" attributes="0"/>
-                      </Group>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jButtonRegresar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="202" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jTextFieldClave" min="-2" pref="91" max="-2" attributes="0"/>
+                  <Component id="jButtonConsultar" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="204" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -55,7 +57,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jLabelTitulo" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabelClave" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextFieldClave" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -65,7 +67,7 @@
                   <Component id="jButtonConsultar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButtonRegresar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
               <Component id="jScrollPane2" min="-2" pref="215" max="-2" attributes="0"/>
               <EmptySpace pref="21" max="32767" attributes="0"/>
           </Group>
@@ -114,7 +116,7 @@
         <Component class="javax.swing.JTable" name="jTableMostrar">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="7" rowCount="9">
+              <Table columnCount="7" rowCount="16">
                 <Column editable="true" title="ID Producto" type="java.lang.Integer"/>
                 <Column editable="true" title="Modelo" type="java.lang.String"/>
                 <Column editable="true" title="Serie" type="java.lang.Integer"/>
