@@ -22,7 +22,6 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
         this.setResizable(false);
         ProyectoVendedor v = new ProyectoVendedor();
         ConexionDB c = new ConexionDB();
-        System.out.println(v.id);
         String sql = "SELECT Clave,Nombre,ApPaterno,ApMaterno,RFC FROM Proyecto.Vendedores WHERE Clave = "
                       +v.id;
         c.consultar("Proyecto", "root", "", sql);
