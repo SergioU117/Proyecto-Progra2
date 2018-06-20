@@ -45,7 +45,7 @@ public class ProyectoVendedor5 extends javax.swing.JFrame {
         jButtonVender = new javax.swing.JButton();
         jRadioButtonCredito = new javax.swing.JRadioButton();
         jRadioButtonContado = new javax.swing.JRadioButton();
-        jLabel3 = new javax.swing.JLabel();
+        jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -58,7 +58,7 @@ public class ProyectoVendedor5 extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("ID Articulo:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 77, -1, -1));
-        getContentPane().add(jTextFieldClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(329, 74, 54, -1));
+        getContentPane().add(jTextFieldClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(339, 74, 60, -1));
 
         jTableMostrar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -130,15 +130,17 @@ public class ProyectoVendedor5 extends javax.swing.JFrame {
         getContentPane().add(jButtonVender, new org.netbeans.lib.awtextra.AbsoluteConstraints(525, 335, -1, -1));
 
         jRadioButtonCredito.setBackground(new java.awt.Color(153, 204, 255));
+        jRadioButtonCredito.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButtonCredito.setText("Credito");
         getContentPane().add(jRadioButtonCredito, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 335, -1, -1));
 
         jRadioButtonContado.setBackground(new java.awt.Color(153, 204, 255));
+        jRadioButtonContado.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButtonContado.setText("Contado");
         getContentPane().add(jRadioButtonContado, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 360, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo2.jpg"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 390));
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo2.jpg"))); // NOI18N
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 390));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -241,7 +243,7 @@ public class ProyectoVendedor5 extends javax.swing.JFrame {
     private javax.swing.JButton jButtonVender;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabelFondo;
     private javax.swing.JRadioButton jRadioButtonContado;
     private javax.swing.JRadioButton jRadioButtonCredito;
     private javax.swing.JScrollPane jScrollPane2;
