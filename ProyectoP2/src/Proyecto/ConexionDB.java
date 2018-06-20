@@ -81,7 +81,7 @@ public class ConexionDB {
         
     }
     
-    public void actulizar (String DB, String usr, String psswrd, String sql) {
+    public void actulizar(String DB, String usr, String psswrd, String sql) {
         try {
             conexion = (Connection) this.getConnection(DB, usr, psswrd);
             inserta = conexion.prepareStatement(sql);
