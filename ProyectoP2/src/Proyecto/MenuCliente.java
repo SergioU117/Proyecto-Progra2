@@ -54,20 +54,22 @@ public class MenuCliente extends javax.swing.JFrame {
     private void initComponents() {
 
         MenuCliente = new javax.swing.JLabel();
-        jLabelFondo = new javax.swing.JLabel();
         ButtonRegresar = new javax.swing.JButton();
+        jButtonCerrarSesion = new javax.swing.JButton();
+        ButtonCatalogo = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         jLabelID = new javax.swing.JLabel();
         jLabelNombre = new javax.swing.JLabel();
         jLabelRFC = new javax.swing.JLabel();
-        ButtonCatalogo = new javax.swing.JButton();
+        jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         MenuCliente.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         MenuCliente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         MenuCliente.setText("Menu de Cliente");
-
-        jLabelFondo.setText("jLabel1");
+        getContentPane().add(MenuCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 15, 291, -1));
 
         ButtonRegresar.setText("Regresar");
         ButtonRegresar.addActionListener(new java.awt.event.ActionListener() {
@@ -75,12 +77,15 @@ public class MenuCliente extends javax.swing.JFrame {
                 ButtonRegresarActionPerformed(evt);
             }
         });
+        getContentPane().add(ButtonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(255, 77, -1, -1));
 
-        jLabelID.setText("jLabel1");
-
-        jLabelNombre.setText("jLabel1");
-
-        jLabelRFC.setText("jLabel1");
+        jButtonCerrarSesion.setText("Cerrar Sesion");
+        jButtonCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCerrarSesionActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, -1, -1));
 
         ButtonCatalogo.setText("Catálogo");
         ButtonCatalogo.addActionListener(new java.awt.event.ActionListener() {
@@ -88,56 +93,50 @@ public class MenuCliente extends javax.swing.JFrame {
                 ButtonCatalogoActionPerformed(evt);
             }
         });
+        getContentPane().add(ButtonCatalogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 118, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        jPanel1.setBackground(new java.awt.Color(0, 204, 153));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Cliente"));
+
+        jLabelID.setText("jLabel1");
+
+        jLabelNombre.setText("jLabel1");
+
+        jLabelRFC.setText("jLabel1");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabelNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
-                            .addComponent(jLabelRFC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabelNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabelFondo)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(MenuCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jLabelID, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(55, 55, 55)
-                                .addComponent(ButtonCatalogo)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(ButtonRegresar)))
-                        .addContainerGap(56, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelRFC, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabelFondo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(MenuCliente)))
-                .addGap(16, 16, 16)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(6, 6, 6)
                 .addComponent(jLabelID)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelNombre)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelRFC)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ButtonRegresar)
-                    .addComponent(ButtonCatalogo))
-                .addGap(93, 93, 93))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 65, -1, -1));
+
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo3.jpg"))); // NOI18N
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 210));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -153,6 +152,12 @@ public class MenuCliente extends javax.swing.JFrame {
         cat.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_ButtonCatalogoActionPerformed
+
+    private void jButtonCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCerrarSesionActionPerformed
+        ConsultarCliente c = new ConsultarCliente();
+        c.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonCerrarSesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,9 +199,11 @@ public class MenuCliente extends javax.swing.JFrame {
     private javax.swing.JButton ButtonCatalogo;
     private javax.swing.JButton ButtonRegresar;
     private javax.swing.JLabel MenuCliente;
+    private javax.swing.JButton jButtonCerrarSesion;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelID;
     private javax.swing.JLabel jLabelNombre;
     private javax.swing.JLabel jLabelRFC;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

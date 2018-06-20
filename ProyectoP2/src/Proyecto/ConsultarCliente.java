@@ -41,21 +41,27 @@ public class ConsultarCliente extends javax.swing.JFrame {
         PassFieldCliente = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         ButtonRegistro = new javax.swing.JButton();
+        jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setText("Cliente");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(147, 11, -1, -1));
 
         jLabel2.setText("ID: ");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 83, -1, -1));
 
         ContrasenaLabel.setText("Contraseña:");
+        getContentPane().add(ContrasenaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 132, -1, -1));
 
         TFID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TFIDActionPerformed(evt);
             }
         });
+        getContentPane().add(TFID, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 80, 111, -1));
 
         ButtonRegresar.setText("Regresar");
         ButtonRegresar.addActionListener(new java.awt.event.ActionListener() {
@@ -63,6 +69,7 @@ public class ConsultarCliente extends javax.swing.JFrame {
                 ButtonRegresarActionPerformed(evt);
             }
         });
+        getContentPane().add(ButtonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(319, 291, -1, -1));
 
         ButtonEntrar.setText("Entrar");
         ButtonEntrar.addActionListener(new java.awt.event.ActionListener() {
@@ -70,14 +77,17 @@ public class ConsultarCliente extends javax.swing.JFrame {
                 ButtonEntrarActionPerformed(evt);
             }
         });
+        getContentPane().add(ButtonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 178, -1, -1));
 
         PassFieldCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PassFieldClienteActionPerformed(evt);
             }
         });
+        getContentPane().add(PassFieldCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 129, 111, -1));
 
         jLabel3.setText("¿Aún no tienes una cuenta?");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 242, -1, -1));
 
         ButtonRegistro.setText("Registrar");
         ButtonRegistro.addActionListener(new java.awt.event.ActionListener() {
@@ -85,63 +95,10 @@ public class ConsultarCliente extends javax.swing.JFrame {
                 ButtonRegistroActionPerformed(evt);
             }
         });
+        getContentPane().add(ButtonRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 238, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(179, 179, 179)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(95, 95, 95)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(52, 52, 52)
-                                .addComponent(ButtonRegistro))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(ContrasenaLabel))
-                                .addGap(39, 39, 39)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(ButtonEntrar)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(TFID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(PassFieldCliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addContainerGap(145, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(ButtonRegresar)
-                .addGap(49, 49, 49))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(TFID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ContrasenaLabel)
-                    .addComponent(PassFieldCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addComponent(ButtonEntrar)
-                .addGap(84, 84, 84)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(ButtonRegistro))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                .addComponent(ButtonRegresar)
-                .addGap(42, 42, 42))
-        );
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo3.jpg"))); // NOI18N
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 340));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -225,5 +182,6 @@ public class ConsultarCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabelFondo;
     // End of variables declaration//GEN-END:variables
 }

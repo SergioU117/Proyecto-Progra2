@@ -48,8 +48,10 @@ public class Catalogo extends javax.swing.JFrame {
         ButtonListo = new javax.swing.JButton();
         CreditoRB = new javax.swing.JRadioButton();
         ContadoRB = new javax.swing.JRadioButton();
+        jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TCatalogo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -80,12 +82,18 @@ public class Catalogo extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(TCatalogo);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 138, 676, 125));
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setText("Consultar");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 9, -1, -1));
 
         jLabel2.setText("Clave del Producto");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 70, -1, -1));
+        getContentPane().add(TFProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(362, 57, 79, 29));
 
         jButton1.setText("Regresar");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 97, -1, -1));
 
         ButtonConsultar.setText("Consultar");
         ButtonConsultar.addActionListener(new java.awt.event.ActionListener() {
@@ -93,6 +101,7 @@ public class Catalogo extends javax.swing.JFrame {
                 ButtonConsultarActionPerformed(evt);
             }
         });
+        getContentPane().add(ButtonConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(362, 97, -1, -1));
 
         ButtonListo.setText("Listo");
         ButtonListo.addActionListener(new java.awt.event.ActionListener() {
@@ -100,6 +109,7 @@ public class Catalogo extends javax.swing.JFrame {
                 ButtonListoActionPerformed(evt);
             }
         });
+        getContentPane().add(ButtonListo, new org.netbeans.lib.awtextra.AbsoluteConstraints(621, 274, 71, -1));
 
         CreditoRB.setText("Credito");
         CreditoRB.addActionListener(new java.awt.event.ActionListener() {
@@ -107,6 +117,7 @@ public class Catalogo extends javax.swing.JFrame {
                 CreditoRBActionPerformed(evt);
             }
         });
+        getContentPane().add(CreditoRB, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 274, -1, -1));
 
         ContadoRB.setText("Contado");
         ContadoRB.addActionListener(new java.awt.event.ActionListener() {
@@ -114,67 +125,10 @@ public class Catalogo extends javax.swing.JFrame {
                 ContadoRBActionPerformed(evt);
             }
         });
+        getContentPane().add(ContadoRB, new org.netbeans.lib.awtextra.AbsoluteConstraints(415, 274, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(242, 242, 242)
-                                .addComponent(jButton1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(233, 233, 233)
-                                .addComponent(jLabel2)))
-                        .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(TFProducto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ButtonConsultar, javax.swing.GroupLayout.Alignment.LEADING)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(257, 257, 257)
-                        .addComponent(jLabel1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(ContadoRB)
-                        .addGap(34, 34, 34)
-                        .addComponent(CreditoRB)
-                        .addGap(44, 44, 44)
-                        .addComponent(ButtonListo, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(25, 25, 25))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(9, 9, 9)
-                .addComponent(jLabel1)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(jLabel2)
-                        .addGap(13, 13, 13))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(TFProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(ButtonConsultar))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CreditoRB)
-                    .addComponent(ContadoRB)
-                    .addComponent(ButtonListo))
-                .addContainerGap(68, Short.MAX_VALUE))
-        );
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo3.jpg"))); // NOI18N
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 320));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -279,6 +233,7 @@ public class Catalogo extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabelFondo;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
