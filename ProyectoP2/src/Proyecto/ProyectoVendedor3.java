@@ -23,6 +23,8 @@ public class ProyectoVendedor3 extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setResizable(false);
     }
+    
+    private static int i = 0;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -149,7 +151,7 @@ public class ProyectoVendedor3 extends javax.swing.JFrame {
 
     private void jButtonConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultarActionPerformed
         String id;
-        int i = 0;
+        
         id = jTextFieldClave.getText();
         ConexionDB c = new ConexionDB();
         String sql = "SELECT * FROM Proyecto.Inventario WHERE Clave ="+id;
@@ -164,12 +166,13 @@ public class ProyectoVendedor3 extends javax.swing.JFrame {
                 jTableMostrar.setValueAt(c.datos.getFloat("PrecioVenta"), i, 5);
                 jTableMostrar.setValueAt(c.datos.getString("Existencia"), i, 6);
             }
+            i++;
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "No se pudo hacer la consulta", "Error", ERROR_MESSAGE);
         } finally {
             c.desconectar();
         }
-        i++;
+        
         
     }//GEN-LAST:event_jButtonConsultarActionPerformed
 
