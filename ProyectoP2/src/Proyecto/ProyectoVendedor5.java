@@ -45,13 +45,20 @@ public class ProyectoVendedor5 extends javax.swing.JFrame {
         jButtonVender = new javax.swing.JButton();
         jRadioButtonCredito = new javax.swing.JRadioButton();
         jRadioButtonContado = new javax.swing.JRadioButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Vender");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(291, 0, -1, -1));
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("ID Articulo:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 77, -1, -1));
+        getContentPane().add(jTextFieldClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(329, 74, 54, -1));
 
         jTableMostrar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -93,86 +100,45 @@ public class ProyectoVendedor5 extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jTableMostrar);
 
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 114, 677, 215));
+
+        jButtonAgregar.setBackground(new java.awt.Color(153, 204, 255));
         jButtonAgregar.setText("Agregar");
         jButtonAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAgregarActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(415, 73, -1, -1));
 
+        jButtonRegresar.setBackground(new java.awt.Color(153, 204, 255));
         jButtonRegresar.setText("Regresar");
         jButtonRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonRegresarActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 73, -1, -1));
 
+        jButtonVender.setBackground(new java.awt.Color(153, 204, 255));
         jButtonVender.setText("Vender");
         jButtonVender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonVenderActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonVender, new org.netbeans.lib.awtextra.AbsoluteConstraints(525, 335, -1, -1));
 
+        jRadioButtonCredito.setBackground(new java.awt.Color(153, 204, 255));
         jRadioButtonCredito.setText("Credito");
+        getContentPane().add(jRadioButtonCredito, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 335, -1, -1));
 
+        jRadioButtonContado.setBackground(new java.awt.Color(153, 204, 255));
         jRadioButtonContado.setText("Contado");
+        getContentPane().add(jRadioButtonContado, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 360, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 674, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(136, 136, 136)
-                        .addComponent(jButtonRegresar)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldClave, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)
-                        .addComponent(jButtonAgregar)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(253, 253, 253)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButtonContado)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jRadioButtonCredito)
-                        .addGap(39, 39, 39)
-                        .addComponent(jButtonVender)))
-                .addGap(105, 105, 105))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextFieldClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonAgregar)
-                    .addComponent(jButtonRegresar))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonVender)
-                    .addComponent(jRadioButtonCredito))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButtonContado)
-                .addContainerGap(12, Short.MAX_VALUE))
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo2.jpg"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 390));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -275,6 +241,7 @@ public class ProyectoVendedor5 extends javax.swing.JFrame {
     private javax.swing.JButton jButtonVender;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JRadioButton jRadioButtonContado;
     private javax.swing.JRadioButton jRadioButtonCredito;
     private javax.swing.JScrollPane jScrollPane2;

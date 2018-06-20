@@ -39,102 +39,62 @@ public class ProyectoVendedor extends javax.swing.JFrame {
         jTextFieldID = new javax.swing.JTextField();
         jButtonEntrar = new javax.swing.JButton();
         jButtonRegresar = new javax.swing.JButton();
-        jLabelFondo = new javax.swing.JLabel();
         jButtonAlta = new javax.swing.JButton();
+        jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitulo.setText("Vendedor");
+        getContentPane().add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
 
+        jLabelID.setForeground(new java.awt.Color(255, 255, 255));
         jLabelID.setText("ID:");
+        getContentPane().add(jLabelID, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Contrasena: ");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+        getContentPane().add(jPasswordFieldContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 104, -1));
 
         jTextFieldID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldIDActionPerformed(evt);
             }
         });
+        getContentPane().add(jTextFieldID, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 104, -1));
 
+        jButtonEntrar.setBackground(new java.awt.Color(153, 204, 255));
         jButtonEntrar.setText("Entrar");
         jButtonEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonEntrarActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, -1, -1));
 
+        jButtonRegresar.setBackground(new java.awt.Color(153, 204, 255));
         jButtonRegresar.setText("Regresar");
         jButtonRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonRegresarActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
 
-        jLabelFondo.setText("jLabel1");
-
+        jButtonAlta.setBackground(new java.awt.Color(153, 204, 255));
         jButtonAlta.setText("Alta");
         jButtonAlta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAltaActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonAlta, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabelFondo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabelID))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextFieldID, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
-                                    .addComponent(jPasswordFieldContrasena)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabelTitulo)
-                                .addGap(21, 21, 21))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(jButtonRegresar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                        .addComponent(jButtonEntrar))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonAlta)
-                        .addGap(72, 72, 72)))
-                .addContainerGap(92, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelTitulo)
-                    .addComponent(jLabelFondo))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelID)
-                    .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(11, 11, 11)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jPasswordFieldContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonRegresar)
-                    .addComponent(jButtonEntrar))
-                .addGap(18, 18, 18)
-                .addComponent(jButtonAlta)
-                .addContainerGap(75, Short.MAX_VALUE))
-        );
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo2.jpg"))); // NOI18N
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 240));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

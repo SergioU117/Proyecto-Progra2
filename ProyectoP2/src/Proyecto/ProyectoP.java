@@ -5,6 +5,8 @@
  */
 package Proyecto;
 
+import java.awt.Image;
+import java.awt.Toolkit;
 
 /**
  *
@@ -19,6 +21,12 @@ public class ProyectoP extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
+    }
+    
+    @Override
+    public Image getIconImage() {
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Imagenes/icono.png"));
+        return retValue;
     }
 
     /**
@@ -36,58 +44,34 @@ public class ProyectoP extends javax.swing.JFrame {
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setIconImage(getIconImage());
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitulo.setText("Tienda de Automoviles S.A de C.V");
+        getContentPane().add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 58));
 
+        jButtonVendedor.setBackground(new java.awt.Color(0, 102, 102));
         jButtonVendedor.setText("Vendedor");
         jButtonVendedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonVendedorActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonVendedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, -1, 44));
 
+        jButtonCliente.setBackground(new java.awt.Color(0, 102, 102));
         jButtonCliente.setText("Cliente");
         jButtonCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonClienteActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, -1, 44));
 
-        jLabelFondo.setText("jLabel1");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
-                .addComponent(jLabelTitulo)
-                .addGap(35, 35, 35))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addComponent(jButtonVendedor)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonCliente)
-                .addGap(86, 86, 86))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelFondo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelFondo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(44, 44, 44)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(192, 192, 192))
-        );
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo.jpg"))); // NOI18N
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 200));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

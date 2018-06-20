@@ -42,27 +42,38 @@ public class ProyectoVendedor3 extends javax.swing.JFrame {
         jButtonConsultar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableMostrar = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitulo.setText("Consultar");
+        getContentPane().add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(243, 0, -1, -1));
 
+        jButtonRegresar.setBackground(new java.awt.Color(153, 204, 255));
         jButtonRegresar.setText("Regresar");
         jButtonRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonRegresarActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 81, -1, -1));
 
+        jLabelClave.setForeground(new java.awt.Color(255, 255, 255));
         jLabelClave.setText("Clave del Producto:");
+        getContentPane().add(jLabelClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 53, -1, -1));
+        getContentPane().add(jTextFieldClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 50, 91, -1));
 
+        jButtonConsultar.setBackground(new java.awt.Color(153, 204, 255));
         jButtonConsultar.setText("Consultar");
         jButtonConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonConsultarActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 81, -1, -1));
 
         jTableMostrar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -108,48 +119,10 @@ public class ProyectoVendedor3 extends javax.swing.JFrame {
             jTableMostrar.getColumnModel().getColumn(5).setResizable(false);
         }
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabelTitulo)
-                .addGap(266, 266, 266))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(200, 200, 200)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelClave)
-                        .addGap(50, 50, 50))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButtonRegresar)
-                        .addGap(87, 87, 87)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextFieldClave, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonConsultar))
-                .addContainerGap(204, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabelTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelClave)
-                    .addComponent(jTextFieldClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonConsultar)
-                    .addComponent(jButtonRegresar))
-                .addGap(36, 36, 36)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 639, 215));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo2.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 370));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -225,6 +198,7 @@ public class ProyectoVendedor3 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonConsultar;
     private javax.swing.JButton jButtonRegresar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelClave;
     private javax.swing.JLabel jLabelTitulo;
     private javax.swing.JScrollPane jScrollPane2;

@@ -54,50 +54,71 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         jLabelTitulo = new javax.swing.JLabel();
         jButtonConsultar = new javax.swing.JButton();
         jButtonVender = new javax.swing.JButton();
         jButtonCerrarSesion = new javax.swing.JButton();
-        jLabelFondo = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabelID = new javax.swing.JLabel();
         jLabelNombre = new javax.swing.JLabel();
         jLabelRFC = new javax.swing.JLabel();
+        jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setBackground(new java.awt.Color(153, 204, 255));
+        jButton1.setText("Agregar Inventario");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, -1, -1));
 
         jLabelTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitulo.setText("Menu de Vendedor");
+        getContentPane().add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 11, -1, -1));
 
+        jButtonConsultar.setBackground(new java.awt.Color(153, 204, 255));
         jButtonConsultar.setText("Consultar");
         jButtonConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonConsultarActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, -1, -1));
 
+        jButtonVender.setBackground(new java.awt.Color(153, 204, 255));
         jButtonVender.setText("Vender");
         jButtonVender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonVenderActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonVender, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, -1, -1));
 
+        jButtonCerrarSesion.setBackground(new java.awt.Color(153, 204, 255));
         jButtonCerrarSesion.setText("Cerrar Sesion");
         jButtonCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCerrarSesionActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
-        jLabelFondo.setText("jLabel1");
+        jPanel1.setBackground(new java.awt.Color(51, 51, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Vendedor", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Vendedor"));
-
+        jLabelID.setForeground(new java.awt.Color(255, 255, 255));
         jLabelID.setText("jLabel1");
 
+        jLabelNombre.setForeground(new java.awt.Color(255, 255, 255));
         jLabelNombre.setText("jLabel2");
 
+        jLabelRFC.setForeground(new java.awt.Color(255, 255, 255));
         jLabelRFC.setText("jLabel3");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -126,44 +147,10 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButtonCerrarSesion)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabelFondo)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabelTitulo))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGap(54, 54, 54)
-                            .addComponent(jButtonConsultar)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButtonVender)))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(81, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelTitulo)
-                    .addComponent(jLabelFondo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonConsultar)
-                    .addComponent(jButtonVender))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addComponent(jButtonCerrarSesion)
-                .addContainerGap())
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 61, -1, -1));
+
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo2.jpg"))); // NOI18N
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 220));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -185,6 +172,12 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
         v.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonVenderActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        ProyectoVendedor7 p = new ProyectoVendedor7();
+        p.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -223,6 +216,7 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonCerrarSesion;
     private javax.swing.JButton jButtonConsultar;
     private javax.swing.JButton jButtonVender;

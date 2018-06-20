@@ -33,24 +33,7 @@ public class ConexionDB {
         return conexion;
     }
     
-    public void consultar(String DB, String usr, String psswrd, String tabla, String col) {
-        try {
-            conexion = (Connection) this.getConnection(DB, usr, psswrd);
-            String sql = "SELECT "+col+" FROM "+DB+"."+tabla;
-            consulta = conexion.prepareStatement(sql);
-            datos = consulta.executeQuery();
-            
-            while (datos.next()) {
-                System.out.println("Nombre = " + datos.getString("Nombre") + "\n" + "RFC = " + datos.getString("RFC"));
-            }    
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "No se pudo hacer la consulta", "Error", ERROR_MESSAGE);
-        } finally {
-            this.desconectar();
-        }
-    }
-    
-        public void consultar(String DB, String usr, String psswrd, String sql) {
+    public void consultar(String DB, String usr, String psswrd, String sql) {
         try {
             conexion = (Connection) this.getConnection(DB, usr, psswrd);
             consulta = conexion.prepareStatement(sql);
@@ -111,9 +94,9 @@ public class ConexionDB {
                 max = datos.getInt("MAX(Clave)");
             } 
             if (datosi == 1) {
-                JOptionPane.showMessageDialog(null, "Valores correctamente insertados\nClave: "+max, "Informacion", INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Registrado correctamente\nClave: "+max, "Informacion", INFORMATION_MESSAGE);
             } else {
-                JOptionPane.showMessageDialog(null, "Valores correctamente insertados", "Informacion", WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Error al registrar", "Informacion", WARNING_MESSAGE);
             }
    
         } catch (SQLException e) {
@@ -123,13 +106,34 @@ public class ConexionDB {
         }
     }
     
-    public void desconectar() {
+    public void insertar(String DB, String usr, String psswrd, String mod, Integer ser, String des, Float prc, Float prv, Integer can) {
+        int max = 0;
         try {
-           if(conexion != null) conexion.close();
-           if(consulta != null) consulta.close();
-           if(datos != null) datos.close();
+            conexion = (Connection) this.getConnection(DB, usr, psswrd);
+            inserta = conexion.prepareStatement("INSERT INTO Proyecto.Inventario (Clave, Modelo, Serie, "
+                    + "Descripcion, PrecioCosto, PrecioVenta, Existencia) VALUES (NULL, ?, ?, ?, ?, ?, ?)");
+            inserta.setString(1,mod);
+            inserta.setInt(2,ser);
+            inserta.setString(3,des);
+            inserta.setFloat(4,prc);
+            inserta.setFloat(5,prv);
+            inserta.setInt(6,can);
+            consulta = conexion.prepareStatement("SELECT MAX(Clave)FROM Proyecto.Inventario");
+            datosi = inserta.executeUpdate();
+            datos = consulta.executeQuery();
+            while (datos.next()) {
+                max = datos.getInt("MAX(Clave)");
+            } 
+            if (datosi == 1) {
+                JOptionPane.showMessageDialog(null, "Valores correctamente insertados\nClave: "+max, "Informacion", INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al inserar", "Informacion", WARNING_MESSAGE);
+            }
+   
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "No se pudo desconectar", "Error", ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "No se puede insertarr", "Error", ERROR_MESSAGE);
+        } finally {
+            this.desconectar();
         }
     }
     
@@ -159,6 +163,16 @@ public class ConexionDB {
             JOptionPane.showMessageDialog(null, "No se puede registrar", "Error", ERROR_MESSAGE);
         } finally {
             this.desconectar();
+        }
+    }    
+    
+    public void desconectar() {
+        try {
+           if(conexion != null) conexion.close();
+           if(consulta != null) consulta.close();
+           if(datos != null) datos.close();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "No se pudo desconectar", "Error", ERROR_MESSAGE);
         }
     }
 }

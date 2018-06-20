@@ -42,95 +42,62 @@ public class ProyectoVendedor4 extends javax.swing.JFrame {
         jButtonRegresar = new javax.swing.JButton();
         jLabelCon = new javax.swing.JLabel();
         jTextFieldCon = new javax.swing.JTextField();
+        jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitulo.setText("Registro");
+        getContentPane().add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, -1));
 
+        jLabelNombre.setForeground(new java.awt.Color(255, 255, 255));
         jLabelNombre.setText("Nombre:");
+        getContentPane().add(jLabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 91, -1, -1));
+        getContentPane().add(jTextFieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 88, 77, -1));
 
+        jLabelApPaterno.setForeground(new java.awt.Color(255, 255, 255));
         jLabelApPaterno.setText("Apellido Paterno:");
+        getContentPane().add(jLabelApPaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 117, -1, -1));
+        getContentPane().add(jTextFieldApPaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 114, 77, -1));
 
+        jLabelApMaterno.setForeground(new java.awt.Color(255, 255, 255));
         jLabelApMaterno.setText("Apellido Materno:");
+        getContentPane().add(jLabelApMaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 143, -1, -1));
+        getContentPane().add(jTextFieldApMaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 140, 77, -1));
 
+        jLabelRFC.setForeground(new java.awt.Color(255, 255, 255));
         jLabelRFC.setText("RFC");
+        getContentPane().add(jLabelRFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 169, -1, -1));
+        getContentPane().add(jTextFieldRFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 166, 77, -1));
 
+        jButtonRegistrar.setBackground(new java.awt.Color(153, 204, 255));
         jButtonRegistrar.setText("Registrar");
         jButtonRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonRegistrarActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 230, -1, -1));
 
+        jButtonRegresar.setBackground(new java.awt.Color(153, 204, 255));
         jButtonRegresar.setText("Regresar");
         jButtonRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonRegresarActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 230, -1, -1));
 
+        jLabelCon.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelCon.setForeground(new java.awt.Color(255, 255, 255));
         jLabelCon.setText("Contraseña:");
+        getContentPane().add(jLabelCon, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 195, -1, -1));
+        getContentPane().add(jTextFieldCon, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 192, 77, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(127, 127, 127)
-                        .addComponent(jLabelTitulo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelApPaterno)
-                            .addComponent(jLabelNombre)
-                            .addComponent(jLabelApMaterno)
-                            .addComponent(jLabelRFC)
-                            .addComponent(jButtonRegresar)
-                            .addComponent(jLabelCon))
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButtonRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextFieldNombre)
-                            .addComponent(jTextFieldApPaterno)
-                            .addComponent(jTextFieldApMaterno)
-                            .addComponent(jTextFieldRFC)
-                            .addComponent(jTextFieldCon))))
-                .addContainerGap(77, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelTitulo)
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelNombre)
-                    .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelApPaterno)
-                    .addComponent(jTextFieldApPaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldApMaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelApMaterno))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelRFC)
-                    .addComponent(jTextFieldRFC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldCon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelCon))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonRegresar)
-                    .addComponent(jButtonRegistrar))
-                .addContainerGap(29, Short.MAX_VALUE))
-        );
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo2.jpg"))); // NOI18N
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 280));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -193,6 +160,7 @@ public class ProyectoVendedor4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelApMaterno;
     private javax.swing.JLabel jLabelApPaterno;
     private javax.swing.JLabel jLabelCon;
+    private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelNombre;
     private javax.swing.JLabel jLabelRFC;
     private javax.swing.JLabel jLabelTitulo;
