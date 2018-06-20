@@ -40,7 +40,7 @@ public class ConsultarCliente extends javax.swing.JFrame {
         ButtonEntrar = new javax.swing.JButton();
         PassFieldCliente = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        ButtonRegistro = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,7 +79,12 @@ public class ConsultarCliente extends javax.swing.JFrame {
 
         jLabel3.setText("¿Aún no tienes una cuenta?");
 
-        jButton1.setText("Registrar");
+        ButtonRegistro.setText("Registrar");
+        ButtonRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonRegistroActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -96,7 +101,7 @@ public class ConsultarCliente extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addGap(52, 52, 52)
-                                .addComponent(jButton1))
+                                .addComponent(ButtonRegistro))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(17, 17, 17)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,7 +137,7 @@ public class ConsultarCliente extends javax.swing.JFrame {
                 .addGap(84, 84, 84)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jButton1))
+                    .addComponent(ButtonRegistro))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addComponent(ButtonRegresar)
                 .addGap(42, 42, 42))
@@ -167,6 +172,12 @@ public class ConsultarCliente extends javax.swing.JFrame {
     private void PassFieldClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PassFieldClienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PassFieldClienteActionPerformed
+
+    private void ButtonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRegistroActionPerformed
+        RegistroClientes r = new RegistroClientes();
+        r.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_ButtonRegistroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -206,11 +217,11 @@ public class ConsultarCliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonEntrar;
+    private javax.swing.JButton ButtonRegistro;
     private javax.swing.JButton ButtonRegresar;
     private javax.swing.JLabel ContrasenaLabel;
     private javax.swing.JPasswordField PassFieldCliente;
     private javax.swing.JTextField TFID;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
