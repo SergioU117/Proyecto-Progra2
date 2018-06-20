@@ -81,7 +81,19 @@ public class ConexionDB {
         
     }
     
-    //Modificar para insertar
+    public void actulizar (String DB, String usr, String psswrd, String sql) {
+        try {
+            conexion = (Connection) this.getConnection(DB, usr, psswrd);
+            inserta = conexion.prepareStatement(sql);
+            datosi = inserta.executeUpdate();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "No se puede actualizar", "Error", ERROR_MESSAGE);
+        } finally {
+            this.desconectar();
+        }
+        
+    }
+    
     public void singup(String DB, String usr, String psswrd, String Con, String Nom, String ApP, String ApM, String RFC) {
         int max = 0;
         try {

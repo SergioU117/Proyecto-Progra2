@@ -147,7 +147,7 @@ public class RegistroClientes extends javax.swing.JFrame {
     private void ButtonListoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonListoActionPerformed
         ConexionDB d = new ConexionDB();
         String sql = "SELECT * FROM Proyecto.Cliente";
-        d.singup("Proyecto", "root", "", sql);
+        //d.singup("Proyecto", "root", "", sql);
     }//GEN-LAST:event_ButtonListoActionPerformed
 
     /**

@@ -16,6 +16,7 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
     /**
      * Creates new form ProyectoVendedor2
      */
+    public static String RFC = "";
     public ProyectoVendedor2() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -26,7 +27,6 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
         c.consultar("Proyecto", "root", "", sql);
         String id = "";
         String Nombre = "";
-        String RFC = "";
         try {
             while (c.datos.next()){
                id = String.valueOf(c.datos.getInt("Clave"));
@@ -59,6 +59,7 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
         jButtonVender = new javax.swing.JButton();
         jButtonCerrarSesion = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jLabelID = new javax.swing.JLabel();
         jLabelNombre = new javax.swing.JLabel();
         jLabelRFC = new javax.swing.JLabel();
@@ -76,6 +77,11 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
         });
 
         jButtonVender.setText("Vender");
+        jButtonVender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVenderActionPerformed(evt);
+            }
+        });
 
         jButtonCerrarSesion.setText("Cerrar Sesion");
         jButtonCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
@@ -86,11 +92,39 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
 
         jLabelFondo.setText("jLabel1");
 
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Vendedor"));
+
         jLabelID.setText("jLabel1");
 
         jLabelNombre.setText("jLabel2");
 
         jLabelRFC.setText("jLabel3");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabelID, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabelNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelRFC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelID)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabelNombre)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabelRFC)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,21 +133,19 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonCerrarSesion)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelFondo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButtonConsultar)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButtonVender))
-                            .addComponent(jLabelTitulo)))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jLabelRFC, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
-                        .addComponent(jLabelNombre, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabelID, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(44, Short.MAX_VALUE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jButtonCerrarSesion)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabelFondo)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jLabelTitulo))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGap(54, 54, 54)
+                            .addComponent(jButtonConsultar)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonVender)))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,17 +154,13 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelTitulo)
                     .addComponent(jLabelFondo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelID)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelNombre)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelRFC)
-                .addGap(27, 27, 27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonConsultar)
                     .addComponent(jButtonVender))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addComponent(jButtonCerrarSesion)
                 .addContainerGap())
         );
@@ -151,6 +179,12 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
         p.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonConsultarActionPerformed
+
+    private void jButtonVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVenderActionPerformed
+        ProyectoVendedor5 v = new ProyectoVendedor5();
+        v.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonVenderActionPerformed
 
     /**
      * @param args the command line arguments
@@ -197,5 +231,6 @@ public class ProyectoVendedor2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelNombre;
     private javax.swing.JLabel jLabelRFC;
     private javax.swing.JLabel jLabelTitulo;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

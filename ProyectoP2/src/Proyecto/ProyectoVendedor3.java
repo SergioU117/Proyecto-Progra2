@@ -90,12 +90,23 @@ public class ProyectoVendedor3 extends javax.swing.JFrame {
             Class[] types = new Class [] {
                 java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Float.class, java.lang.Float.class, java.lang.Integer.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
         });
         jScrollPane2.setViewportView(jTableMostrar);
+        if (jTableMostrar.getColumnModel().getColumnCount() > 0) {
+            jTableMostrar.getColumnModel().getColumn(0).setResizable(false);
+            jTableMostrar.getColumnModel().getColumn(5).setResizable(false);
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -151,7 +162,6 @@ public class ProyectoVendedor3 extends javax.swing.JFrame {
 
     private void jButtonConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultarActionPerformed
         String id;
-        
         id = jTextFieldClave.getText();
         ConexionDB c = new ConexionDB();
         String sql = "SELECT * FROM Proyecto.Inventario WHERE Clave ="+id;
