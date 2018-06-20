@@ -5,21 +5,28 @@
  */
 package Proyecto;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
+import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
+import static javax.swing.JOptionPane.WARNING_MESSAGE;
 import javax.swing.JTable;
 /**
  *
  * @author magar
  */
 public class Catalogo extends javax.swing.JFrame {
-
+    private int k;
+    public static float total=0;
     /**
      * Creates new form Catalogo
      */
     public Catalogo() {
         initComponents();
         this.setLocationRelativeTo(null);
+        k=0;
         }
 
     /**
@@ -38,36 +45,37 @@ public class Catalogo extends javax.swing.JFrame {
         TFProducto = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         ButtonConsultar = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        ButtonListo = new javax.swing.JButton();
+        CreditoRB = new javax.swing.JRadioButton();
+        ContadoRB = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         TCatalogo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID del Articulo", "Modelo", "Serie", "Descripcion", "Precio Costo", "Precio Venta", "En existencia"
+                "ID del Articulo", "Modelo", "Serie", "Descripcion", "Precio Costo", "Precio Venta", "En existencia", "Cantidad"
             }
         ));
         jScrollPane1.setViewportView(TCatalogo);
@@ -86,9 +94,26 @@ public class Catalogo extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Agregar");
+        ButtonListo.setText("Listo");
+        ButtonListo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonListoActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("Listo");
+        CreditoRB.setText("Credito");
+        CreditoRB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CreditoRBActionPerformed(evt);
+            }
+        });
+
+        ContadoRB.setText("Contado");
+        ContadoRB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ContadoRBActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,30 +124,29 @@ public class Catalogo extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(242, 242, 242)
-                                        .addComponent(jButton1))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(233, 233, 233)
-                                        .addComponent(jLabel2)))
-                                .addGap(39, 39, 39)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(TFProducto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ButtonConsultar, javax.swing.GroupLayout.Alignment.LEADING)))
+                                .addGap(242, 242, 242)
+                                .addComponent(jButton1))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(257, 257, 257)
-                                .addComponent(jLabel1)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 31, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                                .addGap(233, 233, 233)
+                                .addComponent(jLabel2)))
+                        .addGap(39, 39, 39)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(TFProducto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ButtonConsultar, javax.swing.GroupLayout.Alignment.LEADING)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(257, 257, 257)
+                        .addComponent(jLabel1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(ContadoRB)
+                        .addGap(34, 34, 34)
+                        .addComponent(CreditoRB)
+                        .addGap(44, 44, 44)
+                        .addComponent(ButtonListo, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(25, 25, 25))
         );
         layout.setVerticalGroup(
@@ -142,52 +166,73 @@ public class Catalogo extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(ButtonConsultar))
-                .addGap(37, 37, 37)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(73, 73, 73)
-                .addComponent(jButton3)
                 .addGap(18, 18, 18)
-                .addComponent(jButton4)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CreditoRB)
+                    .addComponent(ContadoRB)
+                    .addComponent(ButtonListo))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void ButtonConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonConsultarActionPerformed
-        int i=0;
-        String Clave="";
+        String id;
+        id = TFProducto.getText();
         ConexionDB c = new ConexionDB();
-        Clave = TFProducto.getText();
-        String sql = "SELECT * FROM Proyecto.Inventario WHERE Clave = "+Clave;
+        String sql = "SELECT * FROM Proyecto.Inventario WHERE Clave ="+id;
         c.consultar("Proyecto", "root", "", sql);
-        
         try {
             while (c.datos.next()){
-                
-                    
-                        TCatalogo.setValueAt(c.datos.getString("Clave"), i, 0);
-                        TCatalogo.setValueAt(c.datos.getString("Modelo"), i, 1);
-                        TCatalogo.setValueAt(c.datos.getString("Serie"), i, 2);
-                        TCatalogo.setValueAt(c.datos.getString("Descripcion"), i, 3);
-                        TCatalogo.setValueAt(c.datos.getString("PrecioCosto"), i, 4);
-                        TCatalogo.setValueAt(c.datos.getString("PrecioVenta"), i, 5);
-                        TCatalogo.setValueAt(c.datos.getString("Existencia"), i, 6);
-                        
-                       
-                    
-                        
-                
-                 
+                TCatalogo.setValueAt(c.datos.getInt("Clave"), k, 0);
+                TCatalogo.setValueAt(c.datos.getString("Modelo"), k, 1);
+                TCatalogo.setValueAt(c.datos.getInt("Serie"), k, 2);
+                TCatalogo.setValueAt(c.datos.getString("Descripcion"), k, 3);
+                TCatalogo.setValueAt(c.datos.getFloat("PrecioCosto"), k, 4);
+                TCatalogo.setValueAt(c.datos.getFloat("PrecioVenta"), k, 5);
+                TCatalogo.setValueAt(c.datos.getString("Existencia"), k, 6);
             }
-            
+            k++;
         } catch (SQLException e) {
-           JOptionPane.showMessageDialog(null, "No se pudo hacer la consulta", "Error", ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "No se pudo hacer la consulta", "Error", ERROR_MESSAGE);
         } finally {
             c.desconectar();
         }
-        i++;
     }//GEN-LAST:event_ButtonConsultarActionPerformed
+        
+    private void ButtonListoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonListoActionPerformed
+        total=0;
+        for (int j = 0; j < k; j++) {
+            Integer cant = Integer.parseInt(TCatalogo.getValueAt(j, 7).toString());
+            Integer exis = Integer.parseInt(TCatalogo.getValueAt(j, 6).toString());
+            if (exis>=cant) {
+                total += Float.parseFloat(TCatalogo.getValueAt(j, 5).toString())*Float.parseFloat(TCatalogo.getValueAt(j, 7).toString());
+                if (ContadoRB.isSelected()) {
+                    total -= total*0.10;     
+                }
+                Factura f = new Factura();
+                Integer ncant = exis - cant;
+                ConexionDB c = new ConexionDB();
+                String sql = "UPDATE Proyecto.Inventario SET Existencia = "+ncant+" WHERE Clave = "+TCatalogo.getValueAt(j, 0);
+                c.actulizar("Proyecto", "root", "", sql);
+                f.setVisible(true);
+                this.setVisible(false);
+            } else {
+                JOptionPane.showMessageDialog(this, "En el articulo de ID: "+TCatalogo.getValueAt(j, 0)+" exede las existencias", "Informacion", WARNING_MESSAGE);
+            } 
+        }
+    }//GEN-LAST:event_ButtonListoActionPerformed
+
+    private void CreditoRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreditoRBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CreditoRBActionPerformed
+
+    private void ContadoRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContadoRBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ContadoRBActionPerformed
 
     /**
      * @param args the command line arguments
@@ -226,11 +271,12 @@ public class Catalogo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonConsultar;
+    private javax.swing.JButton ButtonListo;
+    private javax.swing.JRadioButton ContadoRB;
+    private javax.swing.JRadioButton CreditoRB;
     private javax.swing.JTable TCatalogo;
     private javax.swing.JTextField TFProducto;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
