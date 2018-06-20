@@ -132,4 +132,33 @@ public class ConexionDB {
             JOptionPane.showMessageDialog(null, "No se pudo desconectar", "Error", ERROR_MESSAGE);
         }
     }
+    
+    public void singupclientes(String DB, String usr, String psswrd, String Con, String Nom, String ApP, String ApM, String RFC) {
+        int max2 = 0;
+        try {
+            conexion = (Connection) this.getConnection(DB, usr, psswrd);
+            inserta = conexion.prepareStatement("INSERT INTO Proyecto.Clientes (Clave, Contraseña, Nombre, ApPaterno, ApMaterno, RFC) VALUES (NULL, ?, ?, ?, ?, ?)");
+            inserta.setString(1, Con);
+            inserta.setString(2,Nom);
+            inserta.setString(3,ApP);
+            inserta.setString(4,ApM);
+            inserta.setString(5,RFC);
+            consulta = conexion.prepareStatement("SELECT MAX(Clave)FROM Proyecto.Clientes");
+            datosi = inserta.executeUpdate();
+            datos = consulta.executeQuery();
+            while (datos.next()) {
+                max2 = datos.getInt("MAX(Clave)");
+            } 
+            if (datosi == 1) {
+                JOptionPane.showMessageDialog(null, "Valores correctamente insertados\nClave: "+max2, "Informacion", INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Valores correctamente insertados", "Informacion", WARNING_MESSAGE);
+            }
+   
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "No se puede registrar", "Error", ERROR_MESSAGE);
+        } finally {
+            this.desconectar();
+        }
+    }
 }
