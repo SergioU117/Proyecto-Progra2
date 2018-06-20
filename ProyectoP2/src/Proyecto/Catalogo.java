@@ -37,7 +37,7 @@ public class Catalogo extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         TFProducto = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        ButtonConsultar = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
@@ -79,10 +79,10 @@ public class Catalogo extends javax.swing.JFrame {
 
         jButton1.setText("Regresar");
 
-        jButton2.setText("Consultar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        ButtonConsultar.setText("Consultar");
+        ButtonConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                ButtonConsultarActionPerformed(evt);
             }
         });
 
@@ -109,7 +109,7 @@ public class Catalogo extends javax.swing.JFrame {
                                 .addGap(39, 39, 39)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(TFProducto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING)))
+                                    .addComponent(ButtonConsultar, javax.swing.GroupLayout.Alignment.LEADING)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(257, 257, 257)
                                 .addComponent(jLabel1)))
@@ -141,7 +141,7 @@ public class Catalogo extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(ButtonConsultar))
                 .addGap(37, 37, 37)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(73, 73, 73)
@@ -154,10 +154,9 @@ public class Catalogo extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void ButtonConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonConsultarActionPerformed
         int i=0;
         String Clave="";
-        ConsultarCliente co = new ConsultarCliente();
         ConexionDB c = new ConexionDB();
         Clave = TFProducto.getText();
         String sql = "SELECT * FROM Proyecto.Inventario WHERE Clave = "+Clave;
@@ -188,7 +187,7 @@ public class Catalogo extends javax.swing.JFrame {
             c.desconectar();
         }
         i++;
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_ButtonConsultarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -226,10 +225,10 @@ public class Catalogo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonConsultar;
     private javax.swing.JTable TCatalogo;
     private javax.swing.JTextField TFProducto;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
