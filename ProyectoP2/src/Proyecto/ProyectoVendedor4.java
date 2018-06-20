@@ -16,6 +16,8 @@ public class ProyectoVendedor4 extends javax.swing.JFrame {
      */
     public ProyectoVendedor4() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
     }
 
     /**
@@ -146,9 +148,7 @@ public class ProyectoVendedor4 extends javax.swing.JFrame {
         String RFC = jTextFieldRFC.getText();
         String con = jTextFieldCon.getText();
         ConexionDB c = new ConexionDB();
-        String sql = "INSERT INTO Proyecto.Vendedores (Clave, Contraseña, Nombre, ApPaterno, ApMaterno, RFC) VALUES (NULL, "
-                     +con+", "+nom+", "+ApP+", "+ApM+", "+RFC;
-        c.singup(sql, sql, sql, sql);
+        c.singup("Proyecto", "root", "", con, nom, ApP, ApM, RFC);
     }//GEN-LAST:event_jButtonRegistrarActionPerformed
 
     /**

@@ -82,17 +82,22 @@ public class ConexionDB {
     }
     
     //Modificar para insertar
-    public void singup(String DB, String usr, String psswrd, String sql) {
+    public void singup(String DB, String usr, String psswrd, String Con, String Nom, String ApP, String ApM, String RFC) {
         int max = 0;
         try {
             conexion = (Connection) this.getConnection(DB, usr, psswrd);
-            inserta = conexion.prepareStatement(sql);
+            inserta = conexion.prepareStatement("INSERT INTO Proyecto.Vendedores (Clave, Contraseña, Nombre, ApPaterno, ApMaterno, RFC) VALUES (NULL, ?, ?, ?, ?, ?)");
+            inserta.setString(1, Con);
+            inserta.setString(2,Nom);
+            inserta.setString(3,ApP);
+            inserta.setString(4,ApM);
+            inserta.setString(5,RFC);
+            consulta = conexion.prepareStatement("SELECT MAX(Clave)FROM Proyecto.Vendedores");
             datosi = inserta.executeUpdate();
-            consultar(DB,usr,psswrd,"SELECT MAX(Clave) FROM Vendedores");
+            datos = consulta.executeQuery();
             while (datos.next()) {
                 max = datos.getInt("MAX(Clave)");
             } 
-            
             if (datosi == 1) {
                 JOptionPane.showMessageDialog(null, "Valores correctamente insertados\nClave: "+max, "Informacion", INFORMATION_MESSAGE);
             } else {
@@ -100,7 +105,7 @@ public class ConexionDB {
             }
    
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "No se puede insertar", "Error", ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "No se puede registrar", "Error", ERROR_MESSAGE);
         } finally {
             this.desconectar();
         }
