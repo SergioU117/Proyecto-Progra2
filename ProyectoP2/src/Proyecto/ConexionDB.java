@@ -82,15 +82,19 @@ public class ConexionDB {
     }
     
     //Modificar para insertar
-    public void insertar(String DB, String usr, String psswrd, String tabla, String col) {
+    public void singup(String DB, String usr, String psswrd, String sql) {
+        int max = 0;
         try {
             conexion = (Connection) this.getConnection(DB, usr, psswrd);
-            String sql = "";
-            inserta = conexion.prepareStatement("SELECT "+col+" FROM "+DB+"."+tabla);
+            inserta = conexion.prepareStatement(sql);
             datosi = inserta.executeUpdate();
+            consultar(DB,usr,psswrd,"SELECT MAX(Clave) FROM Vendedores");
+            while (datos.next()) {
+                max = datos.getInt("MAX(Clave)");
+            } 
             
             if (datosi == 1) {
-                JOptionPane.showMessageDialog(null, "Valores correctamente insertados", "Informacion", INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Valores correctamente insertados\nClave: "+max, "Informacion", INFORMATION_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(null, "Valores correctamente insertados", "Informacion", WARNING_MESSAGE);
             }
